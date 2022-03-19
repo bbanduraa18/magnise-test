@@ -9,12 +9,11 @@ import { ServiceInterface } from "./types/service.interface";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title='magnise-test';
-  public services?: ServiceInterface[];
+  public title='magnise-test';
+  private services?: ServiceInterface[];
   public groups?: number[];
 
-  constructor(private dataService: DataService) {
-  }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.dataService.getData().subscribe((services) => {

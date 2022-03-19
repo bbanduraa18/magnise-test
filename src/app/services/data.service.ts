@@ -9,7 +9,7 @@ import { map, Observable } from "rxjs";
 export class DataService {
   private apiUrl: string = 'https://business-beauty.staging.eservia.com/api/v1.0/widget/services?sort=-id&code=35CDFF1D10A64E9E91D4EA9C8B983DBC';
   private idArray: number[] = [];
-  private uniqueId?: number[];
+  private uniqueId: number[] = [];
 
   constructor(private http: HttpClient) { }
 
