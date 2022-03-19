@@ -1,4 +1,13 @@
-<app-service
-  *ngFor="let group of groups"
-  [services]="getServicesWithId(group)">
-</app-service>
+<app-loader></app-loader>
+<button nz-button
+        nzType="primary"
+        [nzSize]="'large'"
+        (click)="callApi()"
+        *ngIf="!(isLoading | async) && !isLoaded">Get Info</button>
+<div *ngIf="!(isLoading | async) && isLoaded">
+  <app-service
+    *ngFor="let group of groups"
+    [services]="getServicesWithId(group)">
+  </app-service>
+</div>
+
